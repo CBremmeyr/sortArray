@@ -3,7 +3,7 @@ package sortArray
 import spinal.core._
 import spinal.lib._
 
-case class sortNode(width: Int) extends Component {
+case class SortNode(width: Int) extends Component {
   val io = new Bundle {
     val flush     = in Bool
     val flushNext = out Bool
