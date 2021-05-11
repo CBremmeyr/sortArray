@@ -1,0 +1,8 @@
+SortNode:
+- correct value gets passed
+- correct value gets held
+- held value is passed when flushed
+
+SortArray:
+- sorts values correctly
+- test w/ verious depths & widths
