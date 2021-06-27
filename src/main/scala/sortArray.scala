@@ -3,9 +3,11 @@ package sortArray
 import spinal.core._
 import spinal.lib._
 
+//
 // Sort unsigned values as they arive serially
 // Largest value will be first output after flush
-// new input data will be ignored while flushing
+// New input data will be ignored while flushing
+//
 case class SortArray(width: Int, depth: Int) extends Component {
   val io = new Bundle {
     val flush     = in Bool
@@ -15,8 +17,9 @@ case class SortArray(width: Int, depth: Int) extends Component {
   }
 
   // Depth must be at least 2
-  if(depth < 2) {
-    throw new IllegalArgumentException("`depth` argument too small, must be atleast 2")
+  final val depth_min = 2;
+  if(depth < depth_min) {
+    throw new IllegalArgumentException("`depth` argument too small, must be at least " + depth_min)
   }
 
   // Make array of sorting nodes
